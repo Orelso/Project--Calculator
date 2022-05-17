@@ -1,0 +1,62 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, darkred, sienna, darkred);
+}
+
+button {
+  color: white;
+}
+
+.calculator-grid {
+  display: grid; /* will put the buttons in a verticle grid */
+  margin-top: 2rem;
+  justify-content: center; /*moves the calculator to the middle of the page*/
+  grid-template-columns: repeat(4, 6rem); /* 4 columns with 6 rem of thickness*/
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);/*minmax is to be able to input as many numbers for each equation */ /*5 rows at 6rem thickness*/  
+}
+
+.calculator-grid > button {
+  cursor: pointer; /*will make a new cursor*/
+  font-size: 1.7rem;
+  border: 2px solid #e3e3e3;
+  outline: none ; /*?????????????WHYYYYYYYYYYYY*/
+  background-color: black;
+  opacity: 0.7;
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: rgb(185, 115, 115);
+}
+
+.span-two {
+  grid-column: span 2; /* will make buttons with this class span 2 columns*/
+}
+
+.output {
+  grid-column: 1 / -1; /* will span from column 1 to -1 */
+  background-color: #e3e3e3;
+  display: flex;
+  flex-direction: column; /*will make the calculations into a column*/
+  align-items: flex-end; /*will make calculations more to the right side*/
+  justify-content: space-around; /*will put a psce inbetween both numbers*/
+  padding: .75rem; /*will give it a padding*/
+  word-wrap: break-word; /*so it could wrap around when the line ends*/
+  word-break: break-all; /*so it could wrap around when the line ends*/
+
+
+}
+
+.output .previous-operand {
+  color: #7d7585;
+  font-size: 2.0rem;
+}
+
+.output .current-operand {
+  color: black;
+  font-size: 3.0rem;
+}
