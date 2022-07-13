@@ -9,7 +9,7 @@ export const ACTIONS = {
    CHOOSE_OPERATION: 'choose-opertaion',
    CLEAR: 'clear',
    DELETE_DIGIT: 'delete-digit',
-   CALCULATE: 'calculate'
+   CALCULATE: 'calculate' f
 }
 
 function reducer(state, {type, payload}) {
